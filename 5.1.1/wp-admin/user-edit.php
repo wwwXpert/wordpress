@@ -760,7 +760,7 @@ endif; //!IS_PROFILE_PAGE
 		break;
 }
 ?>
-<script type="text/javascript">
+<script>
 	if (window.location.hash == '#password') {
 		document.getElementById('pass1').focus();
 	}

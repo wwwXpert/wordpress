@@ -884,7 +884,7 @@ final class _WP_Editors {
 		}
 
 		?>
-		<script type="text/javascript">
+		<script>
 		window.wp = window.wp || {};
 		window.wp.editor = window.wp.editor || {};
 		window.wp.editor.getDefaultSettings = function() {
@@ -1447,7 +1447,7 @@ final class _WP_Editors {
 
 		wp_print_scripts( array( 'wp-tinymce' ) );
 
-		echo "<script type='text/javascript'>\n" . self::wp_mce_translation() . "</script>\n";
+		echo "<script>\n" . self::wp_mce_translation() . "</script>\n";
 	}
 
 	/**
@@ -1501,7 +1501,7 @@ final class _WP_Editors {
 		do_action( 'before_wp_tiny_mce', self::$mce_settings );
 		?>
 
-		<script type="text/javascript">
+		<script>
 		tinyMCEPreInit = {
 			baseURL: "<?php echo $baseurl; ?>",
 			suffix: "<?php echo $suffix; ?>",
@@ -1525,7 +1525,7 @@ final class _WP_Editors {
 
 			if ( self::$ext_plugins ) {
 				// Load the old-format English strings to prevent unsightly labels in old style popups
-				echo "<script type='text/javascript' src='{$baseurl}/langs/wp-langs-en.js?$version'></script>\n";
+				echo "<script src='{$baseurl}/langs/wp-langs-en.js?$version'></script>\n";
 			}
 		}
 
@@ -1540,7 +1540,7 @@ final class _WP_Editors {
 		do_action( 'wp_tiny_mce_init', self::$mce_settings );
 
 		?>
-		<script type="text/javascript">
+		<script>
 		<?php
 
 		if ( self::$ext_plugins ) {
