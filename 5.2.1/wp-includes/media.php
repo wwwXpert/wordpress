@@ -1816,7 +1816,7 @@ function gallery_shortcode( $attr ) {
 	 */
 	if ( apply_filters( 'use_default_gallery_style', ! $html5 ) ) {
 		$gallery_style = "
-		<style type='text/css'>
+		<style>
 			#{$selector} {
 				margin: auto;
 			}

@@ -264,7 +264,7 @@ function _cleanup_image_add_caption( $matches ) {
  */
 function media_send_to_editor( $html ) {
 	?>
-<script type="text/javascript">
+<script>
 var win = window.dialogArguments || opener || parent || top;
 win.send_to_editor( <?php echo wp_json_encode( $html ); ?> );
 </script>
@@ -498,7 +498,7 @@ function wp_iframe( $content_func /* ... */ ) {
 	}
 	wp_enqueue_style( 'ie' );
 	?>
-<script type="text/javascript">
+<script>
 addLoadEvent = function(func){if(typeof jQuery!="undefined")jQuery(document).ready(func);else if(typeof wpOnload!='function'){wpOnload=func;}else{var oldonload=wpOnload;wpOnload=function(){oldonload();func();}}};
 var ajaxurl = '<?php echo admin_url( 'admin-ajax.php', 'relative' ); ?>', pagenow = 'media-upload-popup', adminpage = 'media-upload-popup',
 isRtl = <?php echo (int) is_rtl(); ?>;
@@ -560,7 +560,7 @@ isRtl = <?php echo (int) is_rtl(); ?>;
 	?>
 </head>
 <body<?php echo $body_id_attr; ?> class="wp-core-ui no-js">
-<script type="text/javascript">
+<script>
 document.body.className = document.body.className.replace('no-js', 'js');
 </script>
 	<?php
@@ -571,7 +571,7 @@ document.body.className = document.body.className.replace('no-js', 'js');
 	/** This action is documented in wp-admin/admin-footer.php */
 	do_action( 'admin_print_footer_scripts' );
 	?>
-<script type="text/javascript">if(typeof wpOnload=='function')wpOnload();</script>
+<script>if(typeof wpOnload=='function')wpOnload();</script>
 </body>
 </html>
 	<?php
@@ -757,7 +757,7 @@ function media_upload_form_handler() {
 
 	if ( isset( $_POST['insert-gallery'] ) || isset( $_POST['update-gallery'] ) ) {
 		?>
-		<script type="text/javascript">
+		<script>
 		var win = window.dialogArguments || opener || parent || top;
 		win.tb_remove();
 		</script>
@@ -1915,7 +1915,7 @@ function get_compat_media_markup( $attachment_id, $args = null ) {
 function media_upload_header() {
 	$post_id = isset( $_REQUEST['post_id'] ) ? intval( $_REQUEST['post_id'] ) : 0;
 
-	echo '<script type="text/javascript">post_id = ' . $post_id . ';</script>';
+	echo '<script>post_id = ' . $post_id . ';</script>';
 	if ( empty( $_GET['chromeless'] ) ) {
 		echo '<div id="media-upload-header">';
 		the_media_upload_tabs();
@@ -2043,7 +2043,7 @@ function media_upload_form( $errors = null ) {
 
 	?>
 
-<script type="text/javascript">
+<script>
 	<?php
 	// Verify size is an int. If not return default value.
 	$large_size_h = absint( get_option( 'large_size_h' ) );
@@ -2168,7 +2168,7 @@ function media_upload_type_form( $type = 'file', $errors = null, $id = null ) {
 
 	<?php media_upload_form( $errors ); ?>
 
-<script type="text/javascript">
+<script>
 jQuery(function($){
 	var preloaded = $(".media-item.preloaded");
 	if ( preloaded.length > 0 ) {
@@ -2233,7 +2233,7 @@ function media_upload_type_url_form( $type = null, $errors = null, $id = null ) 
 
 <h3 class="media-title"><?php _e( 'Insert media from another website' ); ?></h3>
 
-<script type="text/javascript">
+<script>
 var addExtImage = {
 
 	width : '',
@@ -2371,7 +2371,7 @@ function media_upload_gallery_form( $errors ) {
 	}
 	?>
 
-<script type="text/javascript">
+<script>
 jQuery(function($){
 	var preloaded = $(".media-item.preloaded");
 	if ( preloaded.length > 0 ) {
@@ -2696,7 +2696,7 @@ function media_upload_library_form( $errors ) {
 	<?php wp_nonce_field( 'media-form' ); ?>
 	<?php //media_upload_form( $errors ); ?>
 
-<script type="text/javascript">
+<script>
 <!--
 jQuery(function($){
 	var preloaded = $(".media-item.preloaded");
