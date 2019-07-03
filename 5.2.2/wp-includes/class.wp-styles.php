@@ -155,7 +155,7 @@ class WP_Styles extends WP_Dependencies {
 		$inline_style = $this->print_inline_style( $handle, false );
 
 		if ( $inline_style ) {
-			$inline_style_tag = sprintf( "<style id='%s-inline-css' type='text/css'>\n%s\n</style>\n", esc_attr( $handle ), $inline_style );
+			$inline_style_tag = sprintf( "<style id='%s-inline-css'>\n%s\n</style>\n", esc_attr( $handle ), $inline_style );
 		} else {
 			$inline_style_tag = '';
 		}
@@ -294,7 +294,7 @@ class WP_Styles extends WP_Dependencies {
 			return $output;
 		}
 
-		printf( "<style id='%s-inline-css' type='text/css'>\n%s\n</style>\n", esc_attr( $handle ), $output );
+		printf( "<style id='%s-inline-css'>\n%s\n</style>\n", esc_attr( $handle ), $output );
 
 		return true;
 	}
