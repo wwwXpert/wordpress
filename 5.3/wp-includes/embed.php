@@ -439,7 +439,7 @@ function get_post_embed_html( $width, $height, $post = null ) {
 
 	$output = '<blockquote class="wp-embedded-content"><a href="' . esc_url( get_permalink( $post ) ) . '">' . get_the_title( $post ) . "</a></blockquote>\n";
 
-	$output .= "<script type='text/javascript'>\n";
+	$output .= "<script>\n";
 	$output .= "<!--//--><![CDATA[//><!--\n";
 	if ( SCRIPT_DEBUG ) {
 		$output .= file_get_contents( ABSPATH . WPINC . '/js/wp-embed.js' );
