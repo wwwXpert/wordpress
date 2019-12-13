@@ -21,7 +21,7 @@ class Akismet_Widget extends WP_Widget {
 	function css() {
 ?>
 
-<style type="text/css">
+<style>
 .a-stats {
 	width: auto;
 }
